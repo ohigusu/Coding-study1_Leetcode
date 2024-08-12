@@ -1,16 +1,13 @@
 class Solution:
     def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
-        paths = []
-
-        def dfs(graph,node,traversed_path,n):
-            traversed_path.append(node)
-
-            if node == n: paths.append(traversed_path[:])
-
-            for neigh in graph[node]: 
-                dfs(graph,neigh,traversed_path,n)
-                traversed_path.pop()
-
-        dfs(graph,0,[],len(graph)-1)
-        return paths
-
+        result = []
+         
+        def dfs(graph,node,path,n):
+            path.append(node)
+            if node == n : result.append(path[:])
+            for neigh in graph[node]:
+                dfs(graph,neigh,path,n)
+                path.pop()
+            
+            return result
+        return dfs(graph,0,[],len(graph)-1)
