@@ -9,7 +9,7 @@ class Solution:
         stack = [[path[0], [0]]]
 
         while stack:
-            p, path_history = stack.pop()
+            p, path_history = stack.pop(0)
             
             for node in p:
                 if node == N-1:
