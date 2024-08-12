@@ -7,9 +7,9 @@ class Solution:
 
             if node == n: paths.append(traversed_path[:])
 
-            for neigh in graph[node]: dfs(graph,neigh,traversed_path,n)
-
-            traversed_path.pop()
+            for neigh in graph[node]: 
+                dfs(graph,neigh,traversed_path,n)
+                traversed_path.pop()
 
         dfs(graph,0,[],len(graph)-1)
         return paths
