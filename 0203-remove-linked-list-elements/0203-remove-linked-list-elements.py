@@ -26,9 +26,7 @@ class Solution:
             else:
                 curr.next = None
                 return head
-        
-                    
-
+   
 
 
         
