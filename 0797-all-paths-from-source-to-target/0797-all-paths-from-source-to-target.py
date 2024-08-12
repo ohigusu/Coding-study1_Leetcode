@@ -6,10 +6,10 @@ class Solution:
         
         for i, g in enumerate(graph):path[i] = g
         
-        stack = [[path[0], [0]]]
+        queue = deque([[path[0], [0]]])
 
-        while stack:
-            p, path_history = stack.pop(0)
+        while queue:
+            p, path_history = queue.pop()
             
             for node in p:
                 if node == N-1:
@@ -18,7 +18,7 @@ class Solution:
                 else:
                     path_history.append(node)
                     for next_path in path[node]:
-                            stack.append([[next_path], path_history[:]])
+                            queue.append([[next_path], path_history[:]])
                     path_history.pop()
 
         return result
