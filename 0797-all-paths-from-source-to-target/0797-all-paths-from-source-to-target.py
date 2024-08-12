@@ -10,13 +10,14 @@ class Solution:
 
         while stack:
             p, path_history = stack.pop()
-            for each_path in p:
-                if each_path == N-1:
-                    result.append(path_history + [each_path])
+            
+            for node in p:
+                if node == N-1:
+                    result.append(path_history + [node])
 
                 else:
-                    path_history.append(each_path)
-                    for next_path in path[each_path]:
+                    path_history.append(node)
+                    for next_path in path[node]:
                             stack.append([[next_path], path_history[:]])
                     path_history.pop()
 
