@@ -13,6 +13,7 @@ class Solution:
             
             for node in p:
                 if node == N-1:
+
                     result.append(path_history + [node])
 
                 else:
