@@ -1,6 +1,6 @@
 class Solution:
     def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
-        self.paths = []
+        paths = []
 
         def dfs(graph,node,traversed_path,n):
             traversed_path.append(node)
