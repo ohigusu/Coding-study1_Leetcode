@@ -18,7 +18,6 @@ class Solution:
                 if curr.next.val == val:
                     if curr.next.next:
                         curr.next = curr.next.next
-                        curr = curr.next
                     else:
                         curr.next = None
                         return head
