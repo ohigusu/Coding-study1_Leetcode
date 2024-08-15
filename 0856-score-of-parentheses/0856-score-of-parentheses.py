@@ -1,22 +1,24 @@
 class Solution:
     def scoreOfParentheses(self, s: str) -> int:
+        score,result=0,0
         stack = []
 
-        for c in s:
-            if c == ")":
-                    if stack[-1] == "(":
-                        stack[-1] = 1
-                    else:
-                        num = 0
-                        while stack and isinstance(stack[-1], int):
-                            num += stack[-1]
-                            stack.pop()
-                        
-                        if stack and stack[-1] == "(":
-                            stack.pop()
-
-                        stack.append(2 * num)
-            else:
-                stack.append(c)
-
-        return sum(stack)
+        for char in s:
+            if char == "(": 
+                stack.append(0)
+            if char == ")":
+                temp = stack.pop()
+                if temp == 0:
+                    score = 1
+                    stack.append(score)
+                    score = 0
+                else:
+                    while temp != 0:
+                        score += temp
+                        temp = stack.pop()
+                    stack.append(2*score)
+                    score = 0  
+        while stack:
+            result += stack.pop()
+        return result
+        
