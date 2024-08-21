@@ -3,7 +3,7 @@ class Solution:
         if graph == []: return []
         n = len(graph)
         result = []
-        queue = [[graph[0],[0]]]
+        queue = deque([[graph[0],[0]]])
         while queue:
             p,visited = queue.pop()
             for node in p :
