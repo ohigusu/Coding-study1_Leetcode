@@ -9,7 +9,7 @@ class Solution:
         answer = []
         if root is None:return
         def dfs(visited, curr):
-            visited.append(str(curr.val)) #방문처리
+            visited.append(str(curr.val))
             if curr.left is None and curr.right is None:  # 리프 노드일 때
                 answer.append("->".join(visited))  # 경로를 결과에 추가
             else:
