@@ -7,6 +7,7 @@
 class Solution:
     def binaryTreePaths(self, root: Optional[TreeNode]) -> List[str]:
         answer = []
+        if root is None:return
         def dfs(visited, curr):
             visited.append(str(curr.val))
             if curr.left is None and curr.right is None:  # 리프 노드일 때
