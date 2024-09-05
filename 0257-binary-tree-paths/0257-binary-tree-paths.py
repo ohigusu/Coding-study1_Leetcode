@@ -9,9 +9,9 @@ class Solution:
         answer = []
         if root is None:return
         def dfs(visited, curr):
-            visited.append(str(curr.val)) #방문 처리
             if curr.left is None and curr.right is None: # 리프 노드일 때
                 answer.append("->".join(visited))  # 경로를 결과에 추가
+            visited.append(str(curr.val)) #방문 처리
             if curr.left: # 왼쪽 자식 탐색
                 dfs(visited, curr.left)  
             if curr.right: # 오른쪽 자식 탐색
