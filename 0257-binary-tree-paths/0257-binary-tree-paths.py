@@ -16,7 +16,7 @@ class Solution:
             else:
                 dfs(visited, curr.left)  # 왼쪽 자식 탐색
                 dfs(visited, curr.right)  # 오른쪽 자식 탐색
-                visited.pop()  # 백트래킹을 위해 마지막 노드를 제거
+            visited.pop()  # 백트래킹을 위해 마지막 노드를 제거
 
         dfs([], root)
         return answer
