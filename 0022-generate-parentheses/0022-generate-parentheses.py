@@ -4,7 +4,8 @@ class Solution:
         def back(start,end,visited):
             if end == n: 
                 answer.append(visited)
-            if start >= end+1:
+                return 
+            if start > end:
                 back(start,end+1,visited+")")
             if start < n:
                 back(start+1,end,visited+"(")
