@@ -2,9 +2,9 @@ class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         answer = []
         def back(start,end,visited):
-            if (start == n) and (end == n): 
+            if (end == n): 
                 answer.append(visited[:])
-                return
+                return 
             else:
                 if start >= end+1:
                     back(start,end+1,visited+")")
