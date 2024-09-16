@@ -30,6 +30,7 @@ class Solution:
             
             #숫자들을 하나씩 확인하며 상자에 넣기
             for i in range(start, len(nums)):
+                
                 if not visited[i] and current_sum + nums[i] <= target_sum:
                     visited[i] = True #숫자를 사용한다고 표시
                     if backtrack(i + 1, current_sum + nums[i], count):
