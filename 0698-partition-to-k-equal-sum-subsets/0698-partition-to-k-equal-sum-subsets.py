@@ -17,6 +17,7 @@ class Solution:
         
         #백트래킹 함수
         def backtrack(start, current_sum, count):
+            
             #만약 k-1개의 부분집합을 만들었다면, 나머지 하나도 완성된 것
             #total_sum = 20, target_sum = 5일 때, 최종 부분집합의 개수는 4개이다. 
             #즉, 3개의 부분집합이 이미 완성되었으면 나머지도 자동으로 완성된다.
@@ -30,10 +31,10 @@ class Solution:
             #숫자들을 하나씩 확인하며 상자에 넣기
             for i in range(start, len(nums)):
                 if not visited[i] and current_sum + nums[i] <= target_sum:
-                    visited[i] = True  # 숫자를 사용한다고 표시
+                    visited[i] = True #숫자를 사용한다고 표시
                     if backtrack(i + 1, current_sum + nums[i], count):
                         return True
-                    visited[i] = False  # 실패하면 다시 되돌리기
+                    visited[i] = False #실패하면 다시 되돌리기
             return False
         
         #첫 번째 부분집합부터 만들기 시작
