@@ -35,6 +35,8 @@ class Solution:
                     if backtrack(i + 1, current_sum + nums[i], count):
                         return True
                     visited[i] = False #실패하면 다시 되돌리기
+                    if current_sum + nums[i] == target_sum:
+                        break
             return False
         
         #첫 번째 부분집합부터 만들기 시작
