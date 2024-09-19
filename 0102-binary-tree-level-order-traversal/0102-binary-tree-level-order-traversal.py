@@ -8,11 +8,12 @@ class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         visit = []
         def level_order(node,l):
-            if node is None: return
+            if not node:
+                return
             if l >=len(visit):
                 visit.append([])
-            else:
-                visit[l].append(node.val)
+
+            visit[l].append(node.val)
             level_order(node.left,l+1)
             level_order(node.right,l+1)
         level_order(root,0)
