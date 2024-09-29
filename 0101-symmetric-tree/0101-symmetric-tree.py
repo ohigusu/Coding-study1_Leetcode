@@ -7,7 +7,8 @@
 class Solution:
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
         if root is None: return True
-        queue = deque([(root.left,root.right)])
+        queue = deque()
+        queue.append((root.left,root.right))
 
         while queue:
             left,right = queue.popleft()
