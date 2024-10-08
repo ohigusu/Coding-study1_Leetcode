@@ -10,13 +10,15 @@ class Solution:
         Do not return anything, modify root in-place instead.
         """
         # 중위 순회를 통해 트리의 노드를 리스트에 저장
+        nodes = []
         def inorder_traversal(node):
-            if not node:
-                return []
-            return inorder_traversal(node.left) + [node] + inorder_traversal(node.right)
+            if node:
+                inorder_traversal(node.left)
+                nodes.append(node)
+                inorder_traversal(node.right)
 
         # 중위 순회로 노드들을 리스트에 담기
-        nodes = inorder_traversal(root)
+        inorder_traversal(root)
         
         # 잘못된 두 노드 찾기
         first = second = None
@@ -29,8 +31,6 @@ class Solution:
         # 두 노드의 값 교환
         if first and second:
             first.val, second.val = second.val, first.val
-        
-
 
                 
 
