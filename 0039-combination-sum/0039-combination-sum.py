@@ -3,9 +3,9 @@ class Solution:
         answer = []
         #backtracking 식
         #입력데이터는 다음과 같다.
-        # visited: 방문한 원소 저장
-        # rest: 나머지 값
-        # start_idx: 인덱스
+        #visited: 방문한 원소 저장
+        #rest: 나머지 값
+        #start_idx: 인덱스
         #출력데이터는 다음과 같다.
         # answer: 다 더했을 때 target의 값과 동일한 조합들의 리스트를 저장한 리스트 
         def dfs(visited,rest,start_idx):
